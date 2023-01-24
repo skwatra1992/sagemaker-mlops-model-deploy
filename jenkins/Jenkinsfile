@@ -36,7 +36,8 @@ pipeline {
                 --export-cfn-params-tags "True"
             '''
 
-            sh '''aws cloudformation package --template endpoint-config-template.yml \
+            sh '''export PATH="/Users/shkwatra/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+                aws cloudformation package --template endpoint-config-template.yml \
                 --s3-bucket $ARTIFACT_BUCKET --output-template $EXPORT_TEMPLATE_NAME
             '''
 
