@@ -20,7 +20,7 @@ def get_approved_package(model_package_group_name):
         The SageMaker Model Package ARN.
     """
     try:
-        # Get the latest approved model package
+        # Get the latest approved model packages
         response = sm_client.list_model_packages(
             ModelPackageGroupName=model_package_group_name,
             ModelApprovalStatus="Approved",
