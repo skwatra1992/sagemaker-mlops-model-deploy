@@ -36,7 +36,7 @@ pipeline {
                 --export-cfn-params-tags "True"
             '''
 
-            sh '''export PATH="/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/opt/ruby/bin:/Users/shkwatra/opt/anaconda3/bin:/Users/shkwatra/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/shkwatra/.toolbox/bin" \
+            sh '''export PATH="/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/opt/ruby/bin:/Users/shkwatra/opt/anaconda3/bin:/Users/shkwatra/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/shkwatra/.toolbox/bin" 
                 aws cloudformation package --template endpoint-config-template.yml \
                 --s3-bucket $ARTIFACT_BUCKET --output-template $EXPORT_TEMPLATE_NAME
             '''
